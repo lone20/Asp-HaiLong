@@ -1,0 +1,37 @@
+﻿@model LLVBog.Models.Account
+@{
+    Layout = null;
+}
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <title>Quên mật khẩu</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+
+        <link rel="stylesheet" href="~/Content/Login/styleLogin.css">
+
+        <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="w3layoutscontaineragileits">
+            <h2>Quên mật khẩu</h2>
+            <label>@ViewBag.Message</label>
+            <form action="/Login/ForgetPassword" method="post">
+                @Html.AntiForgeryToken()
+                <input id="Gmail" name="Gmail" type="email" placeholder="Nhập vào gmail đăng ký tài khoản">
+                <div class="aitssendbuttonw3ls">
+                    <input type="submit" value="Gửi">
+                    <p><a class="w3_play_icon1" href="/Login/Login"> Quay lại trang đăng nhập?</a></p>
+                    <div class="clear"></div>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

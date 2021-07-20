@@ -1,0 +1,51 @@
+﻿@model LLVBog.Models.ContactUs
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Liên hệ</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+
+    <link rel="stylesheet" href="~/Content/Login/styleLogin.css">
+
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+</head>
+
+<body>
+    <div class="w3layoutscontaineragileits">
+        <h2>Liên hệ</h2>
+        <label>@ViewBag.Message</label>
+        @using (Html.BeginForm("Index", "ContactUs", FormMethod.Post))
+        {
+
+                if (Session["Username"] == null)
+                {
+                    <input id="Gmail" name="Gmail" type="email" placeholder="Email">
+                    @Html.ValidationMessageFor(model => model.Gmail, "", new { @class = "message" })
+                    <input style="height:250px;text-align:match-parent;" id="Message" name="Message" type="text" placeholder="Phản hồi">
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "message" })
+                }
+                else
+                {
+                    <input id="Username" name="Username" type="text" readonly value="@Session["Username"]" placeholder="Tên đăng nhập">
+                    <input id="Gmail" name="Gmail" type="email" readonly value="@Session["Email"]" placeholder="Email">
+                    <input style="height:250px;text-align:match-parent;" id="Message" name="Message" type="text" placeholder="Phản hồi">
+                }
+                <div class="aitssendbuttonw3ls">
+                    <input type="submit" value="Gửi">
+                    <p><a class="w3_play_icon1" href="/Home/Index"> Trở về trang chủ</a></p>
+                    <div class="clear"></div>
+                </div>
+        }
+    </div>
+    <script src="~/Scripts/Login/script1.js"></script>
+</body>
+</html>
+
